@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html>
+	<link rel="stylesheet" href="./style.css">
 	<body>
-		<h1>Vuejs hello</h1>
-		<script>
-			let age = prompt("age?", 18);
-
-			let message =
-				age < 3
-					? "Hi, baby!"
-					: age < 18
-					? "Hello!"
-					: age < 100
-					? "Heelooooooooo!"
-					: "What an unusual age!";
-
-			alert(message);
-		</script>
-	</body>
+		<section class="lesson_1">
+			<h1>Bài tập 1</h1>
+			<div>
+				<label>Nhập 1 chuỗi số</label>
+				<input id="array"></input>
+				<button onclick="splitEvenOdd()"> Chia mảng chẵn/lẻ </button>
+		</div>
+		<!-- <hr> -->
+		<div class="array"> </div>
+		<div>
+			<h3>Mảng chẵn</h3>
+			<div id="myEven"></div>
+		</div>
+		<div>
+			<h3>Mảng lẻ</h3>
+			<div id="myOdd"></div>
+		</div>
+	</section>
+	<hr>
+	<section class="lesson_2">
+		<h1>Bài tập 2</h1>
+<input id="firstnumber"></input>
+<div class="mathButton">
+	
+<button onclick="getPlus()">+</button>
+<button onclick="getMinute()">-</button>
+<button onclick="getMultiple()">x</button>
+<button onclick="getDivide()">/</button>
+	
+</div>
+<input id="secondnumber"></input>
+<div class="results">
+	<label >Kết quả</label>
+	<input  id="result" readonly></input>
+</div>
+	</section>
+		<script src="main.js"></script>
+		<style >
+			
+		</style>
+		</body> 
 </html>
