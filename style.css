@@ -96,3 +96,7 @@ li {
 #result_4 {
 	width: 400px;
 }
+.kind button {
+	width: 100px;
+	height: 100px;
+}
