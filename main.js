@@ -44,74 +44,131 @@ function getDivide() {
 }
 
 // leeson 3: tinh dien tich tam giac biet 3 canh
-function onCalculate() {
+
+function onCalculateTriangleArea() {
 	let a = Number(document.getElementById('aTriangle').value);
 	let b = Number(document.getElementById('bTriangle').value);
 	let c = Number(document.getElementById('cTriangle').value);
-
-	let halfArea = (a + b + c) / 2;
+	let halfPerimeter = (a + b + c) / 2;
 	// console.log(halfArea);
 	let triangleArea =
 		Math.round(
 			Math.sqrt(
-				halfArea * (halfArea - a) * (halfArea - b) * (halfArea - c)
+				halfPerimeter *
+					(halfPerimeter - a) *
+					(halfPerimeter - b) *
+					(halfPerimeter - c)
 			) * 10
 		) / 10;
 	console.log(triangleArea);
 	document.getElementById('result_3').value = triangleArea;
 }
-
-function onCheck() {
+// nen dat la onCheckTriangle
+function onCheckTriangle() {
 	let a = Number(document.getElementById('aTriangle').value);
 	let b = Number(document.getElementById('bTriangle').value);
 	let c = Number(document.getElementById('cTriangle').value);
-	if (a + b > c && b + c > a && c + a > b) {
-		if (
-			a * a == b * b + c * c ||
-			b * b == a * a + c * c ||
-			c * c == a * a + b * b
-		) {
-			alert('ABC là tam giác vuông');
-		} else if (a === b && b === c) {
-			alert('ABC là tam giác đều');
-		} else if (a == b || b == c || c == a) {
-			alert('ABC là tam giác cân');
-		} else if (
-			a * a > b * b + c * c ||
-			b * b > a * a + c * c ||
-			c * c > a * a + b * b
-		) {
-			alert('ABC là tam giác tù');
-		} else alert('ABC là tam giác nhọn');
-	} else alert('ABC không phải là hình tam giác');
+
+	// sử dụnng cách return sớm với trường hợp không phải tam giác
+	// đặt khối điều kiện thành hàm hoặc biến
+	let isTriangle = checkValidTriangle(a, b, c);
+	if (!isTriangle) {
+		return false;
+	}
+	checkTypeofTriangle(a, b, c, isTriangle);
+	// if (a + b <= c || b + c <= a || c + a <= b) {
+	// 	alert('ABC không phải là hình tam giác');
+	// 	return 'Không phải tam giác';
+	// } else {
+	// 	if (
+	// 		a * a == b * b + c * c ||
+	// 		b * b == a * a + c * c ||
+	// 		c * c == a * a + b * b
+	// 	) {
+	// 		alert('ABC là tam giác vuông');
+	// 		return 'Là tam giác vuông';
+	// 	} else if (a === b && b === c) {
+	// 		alert('ABC là tam giác đều');
+	// 		return 'Là tam giác đều';
+	// 	} else if (a == b || b == c || c == a) {
+	// 		alert('ABC là tam giác cân');
+	// 		return 'Là tam giác cân';
+	// 	} else if (
+	// 		a * a > b * b + c * c ||
+	// 		b * b > a * a + c * c ||
+	// 		c * c > a * a + b * b
+	// 	) {
+	// 		alert('ABC là tam giác tù');
+	// 		return 'Là tam giác tù';
+	// 	} else {
+	// 		alert('ABC là tam giác nhọn');
+	// 		return 'Là tam giác nhọn';
+	// 	}
+	// }
+
+	/**
+	 * Check triangle or not
+	 * @param {Integer} sideA 1st edge's length
+	 * @param {Integer} sideB 2nd edge's length
+	 * @param {Integer} sideC 3rd edge's length
+	 * @returns {Boolean} is triangle or not
+	 */
+	function checkValidTriangle(sideA, sideB, sideC) {
+		return (
+			sideA + sideB > sideC &&
+			sideB + sideC > sideA &&
+			sideC + sideA > sideB
+		);
+	}
+
+	function checkTypeofTriangle(edgeA, edgeB, edgeC, isValid) {
+		console.log('true or false', isValid);
+		if (!isValid) {
+			// alert('khong phai la tam giac');
+		} else {
+			if (
+				edgeA * edgeA == edgeB * edgeB + edgeC * edgeC ||
+				edgeB * edgeB == edgeA * edgeA + edgeC * edgeC ||
+				edgeC * edgeC == edgeA * edgeA + edgeB * edgeB
+			) {
+				alert('ABC là tam giác vuông');
+			} else if (edgeA === edgeB && edgeB === edgeC) {
+				alert('ABC là tam giác đều');
+			} else if (edgeA == edgeB || edgeB == edgeC || edgeC == edgeA) {
+				alert('ABC là tam giác cân');
+			} else if (
+				edgeA * edgeA > edgeB * edgeB + edgeC * edgeC ||
+				edgeB * edgeB > edgeA * edgeA + edgeC * edgeC ||
+				edgeC * edgeC > edgeA * edgeA + edgeB * edgeB
+			) {
+				alert('ABC là tam giác tù');
+			} else {
+				alert('ABC là tam giác nhọn');
+			}
+		}
+	}
 }
 
 // bai4
 function strLength() {
 	let myString = document.getElementById('string').value;
-	// console.log(myString);
 	let length = 0;
-	// console.log(length);
 	while (myString[length] !== undefined) {
 		length++;
-		// return length;
 	}
-	console.log('do dai string: ', length);
 	document.getElementById('result_4').value = length;
 }
 function strUpper() {
 	let myString = document.getElementById('string').value.toUpperCase();
-	console.log(myString);
 	document.getElementById('result_4').value = myString;
 }
 function strLower() {
 	let myString = document.getElementById('string').value.toLowerCase();
-	console.log(myString);
 	document.getElementById('result_4').value = myString;
 }
 function capitalizeFirstLetter() {
 	let myString = document.getElementById('string').value;
-	// change myString thành 1 Array chứa các word
+	// convert myString thành Array chứa các word
 	let newArray = myString.split(' ');
 	// change các chữ csai đầu của array mới tạo thành in hoa
 	for (let i = 0; i < newArray.length; i++) {
