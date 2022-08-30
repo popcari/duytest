@@ -65,39 +65,25 @@ function onCheck() {
 	let a = Number(document.getElementById('aTriangle').value);
 	let b = Number(document.getElementById('bTriangle').value);
 	let c = Number(document.getElementById('cTriangle').value);
-	if (
-		a + b < c ||
-		b + c < a ||
-		c + a < b ||
-		(a <= 0 && b <= 0 && c <= 0)
-	) {
-		alert('ABC không phải là hình tam giác');
-	} else {
-		if (a === b && b === c) {
-			alert('ABC là tam giác đều');
-		} else if (a == b || b == c || c == a) {
-			if (
-				a * a == b * b + c * c ||
-				b * b == a * a + c * c ||
-				c * c == a * a + b * b
-			) {
-				alert('ABC là tam giác vuông cân');
-			}
-			alert('ABC là tam giác cân');
-		} else if (
+	if (a + b > c && b + c > a && c + a > b) {
+		if (
 			a * a == b * b + c * c ||
 			b * b == a * a + c * c ||
 			c * c == a * a + b * b
 		) {
-			alert('ABC là tam giác vuông ');
+			alert('ABC là tam giác vuông');
+		} else if (a === b && b === c) {
+			alert('ABC là tam giác đều');
+		} else if (a == b || b == c || c == a) {
+			alert('ABC là tam giác cân');
 		} else if (
 			a * a > b * b + c * c ||
 			b * b > a * a + c * c ||
 			c * c > a * a + b * b
 		) {
 			alert('ABC là tam giác tù');
-		}
-	}
+		} else alert('ABC là tam giác nhọn');
+	} else alert('ABC không phải là hình tam giác');
 }
 
 // bai4
