@@ -71,40 +71,12 @@ function onCheckTriangle() {
 
 	// sử dụnng cách return sớm với trường hợp không phải tam giác
 	// đặt khối điều kiện thành hàm hoặc biến
-	let isTriangle = checkValidTriangle(a, b, c);
+	let isTriangle = checkValidTriangle(a, b, c); 
 	if (!isTriangle) {
+		alert("Không phải là tam giác");
 		return false;
 	}
-	checkTypeofTriangle(a, b, c, isTriangle);
-	// if (a + b <= c || b + c <= a || c + a <= b) {
-	// 	alert('ABC không phải là hình tam giác');
-	// 	return 'Không phải tam giác';
-	// } else {
-	// 	if (
-	// 		a * a == b * b + c * c ||
-	// 		b * b == a * a + c * c ||
-	// 		c * c == a * a + b * b
-	// 	) {
-	// 		alert('ABC là tam giác vuông');
-	// 		return 'Là tam giác vuông';
-	// 	} else if (a === b && b === c) {
-	// 		alert('ABC là tam giác đều');
-	// 		return 'Là tam giác đều';
-	// 	} else if (a == b || b == c || c == a) {
-	// 		alert('ABC là tam giác cân');
-	// 		return 'Là tam giác cân';
-	// 	} else if (
-	// 		a * a > b * b + c * c ||
-	// 		b * b > a * a + c * c ||
-	// 		c * c > a * a + b * b
-	// 	) {
-	// 		alert('ABC là tam giác tù');
-	// 		return 'Là tam giác tù';
-	// 	} else {
-	// 		alert('ABC là tam giác nhọn');
-	// 		return 'Là tam giác nhọn';
-	// 	}
-	// }
+	checkTypeofTriangle(a, b, c);
 
 	/**
 	 * Check triangle or not
@@ -114,6 +86,7 @@ function onCheckTriangle() {
 	 * @returns {Boolean} is triangle or not
 	 */
 	function checkValidTriangle(sideA, sideB, sideC) {
+		console.log('hello cac ban');
 		return (
 			sideA + sideB > sideC &&
 			sideB + sideC > sideA &&
@@ -121,11 +94,7 @@ function onCheckTriangle() {
 		);
 	}
 
-	function checkTypeofTriangle(edgeA, edgeB, edgeC, isValid) {
-		console.log('true or false', isValid);
-		if (!isValid) {
-			// alert('khong phai la tam giac');
-		} else {
+	function checkTypeofTriangle(edgeA, edgeB, edgeC) {
 			if (
 				edgeA * edgeA == edgeB * edgeB + edgeC * edgeC ||
 				edgeB * edgeB == edgeA * edgeA + edgeC * edgeC ||
@@ -147,7 +116,7 @@ function onCheckTriangle() {
 			}
 		}
 	}
-}
+
 
 // bai4
 function strLength() {
