@@ -29,26 +29,18 @@ function onCheckTriangle() {
 		alert('Không phải là tam giác');
 		return false;
 	}
+	btn.disabled = false;
 
-	// let isRightAngled = checkRightAngledTriangle(a, b, c);
 	if (checkRightAngledTriangle(a, b, c)) {
-		btn.disabled = false;
 		alert('Là tam giác vuông');
-		// return true;
 	}
-	// checkEquiangularTriangle(a, b, c);
 	else if (checkEquiangularTriangle(a, b, c)) {
-		btn.disabled = false;
 		alert('Là tam giác đều');
-		// return true;
 	} else if (checkIsoscelesTriangle(a, b, c)) {
-		btn.disabled = false;
 		alert('Là tam giác cân');
 	} else if (checkEquilateralTriangle) {
-		btn.disabled = false;
 		alert('Là tam giác tù');
 	} else {
-		btn.disabled = false;
 		alert('Là tam giác nhọn');
 	}
 }

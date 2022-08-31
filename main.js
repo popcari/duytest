@@ -1,3 +1,41 @@
+var courses = [
+	{
+		id: 1,
+		name: 'HTML',
+		price: 500,
+	},
+	{
+		id: 2,
+		name: 'CSS',
+		price: 500,
+	},
+	{
+		id: 1,
+		name: 'Javascript',
+		price: 1500,
+	},
+	{
+		id: 4,
+		name: 'Vuejs3',
+		price: 2000,
+	},
+];
+let i = 0;
+function priceCalculate(accumulator, currentValue, currentIndex) {
+	i++;
+	var total = accumulator + currentValue.price;
+	console.table({
+		id: i,
+		'lưu trũ': accumulator,
+		'Courses price: ': currentValue.price,
+		'tích trữ: ': total,
+	});
+
+	return total;
+}
+var totalPrice = courses.reduce(priceCalculate, 0);
+console.log(totalPrice);
+
 function splitEvenOdd() {
 	let text = document.getElementById('array').value;
 	const myArray = text.split(',');
