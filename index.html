@@ -1,20 +1,119 @@
 <!DOCTYPE html>
 <html>
+	<link rel="stylesheet" href="./style.css">
+	
 	<body>
-		<h1>Vuejs hello</h1>
-		<script>
-			let age = prompt("age?", 18);
+		<section class="lesson_1">
+			<h1>Bài tập 1</h1>
+			<div>
+				<label>Nhập 1 chuỗi số</label>
+				<input id="array"></input>
+				<button onclick="splitEvenOdd()"> Chia mảng chẵn/lẻ </button>
+		</div>
+		<!-- <hr> -->
+		<div class="array"> </div>
+		<div>
+			<h3>Mảng chẵn</h3>
+			<div id="myEven"></div>
+		</div>
+		<div>
+			<h3>Mảng lẻ</h3>
+			<div id="myOdd"></div>
+		</div>
+	</section>
+	<hr>
+	<section class="lesson_2">
+		<h1>Bài tập 2</h1>
+		<div class="container"> 
 
-			let message =
-				age < 3
-					? "Hi, baby!"
-					: age < 18
-					? "Hello!"
-					: age < 100
-					? "Heelooooooooo!"
-					: "What an unusual age!";
+			<input id="firstnumber"></input>
+			<div class="mathButton">
+				
+				<button onclick="getPlus()">+</button>
+				<button onclick="getMinute()">-</button>
+				<button onclick="getMultiple()">x</button>
+				<button onclick="getDivide()">/</button>
+	
+			</div>
+			<input id="secondnumber"></input>
+			<div class="results">
+				<label >Kết quả</label>
+				<input  id="result" readonly></input>
+			</div>
+			</div>
+	</section>
+	<hr>
+	<section class="lesson_3">
+		<h1>Bài tập 3</h1>
+		<div class="container_3">
 
-			alert(message);
-		</script>
-	</body>
+			<div class="angle">
+				<input id="aTriangle" placeholder="cạnh a"></input>
+				<input id="bTriangle"  placeholder="cạnh b"></input>
+				<input id="cTriangle"  placeholder="cạnh c"></input>
+			</div>
+			<button id="calculate" disabled="disabled" onclick="onCalculateTriangleArea()"> Tính toán: </button>
+			<div class="result__section">
+				<h3> Diện tích tam giác là :</h3>
+				<input id="result_3" readonly>
+				</input>
+			</div>
+			<div class="kind">
+				<button onclick="onCheckTriangle()">Kiểm tra tam giác</button>
+			
+			</div>
+		</div>
+		</section>
+		<hr>
+		<section class="lesson_4">
+			<h1>Bài tập 4</h1>
+			<div class="container_4">
+				<label>Nhập 1 chuỗi </label>
+				<input id="string"></input>
+				<div class="required">
+					<button onclick="strLength()"> Tính độ dài chuỗi </button>
+					<button onclick="strUpper()"> In chuỗi thành chuỗi viết hoa </button>
+					<button onclick="strLower()"> In chuỗi thành chuỗi viết thường </button>
+					<button onclick="capitalizeFirstLetter()"> In hoa đầu từ </button>
+					<button onclick="camelCase()"> Biến chuỗi thành camel case</button>
+					<button onclick="snakeCase()"> Biến chuỗi thành snake case</button>
+				</div>
+				<div class="result__section">
+					<h3> Chuỗi mới</h3>
+					<input id="result_4" readonly>
+					</input>
+				</div>
+		</div>
+	</section>
+	<hr>
+	<section class="lesson_5">
+		<div>
+			<h1>Bài tập 5</h1>
+			<div>
+				<label>Nhập 1 chuỗi số</label>
+				<input id="lesson_5"></input>
+				<button onclick="lowToHigh()"> Tăng dần </button>
+				<button onclick="highToLow()"> Giảm dần</button>
+
+		</div>
+		<!-- <hr> -->
+		<div class="array"> </div>
+		<div>
+			<h3>Mảng tăng dần</h3>
+			<input id="lowtohigh" readonly>
+					</input>
+		</div>
+		<div>
+			<h3>Mảng giảm dần</h3>
+			<input id="hightolow" readonly>
+					</input>
+		</div>
+		</div>
+	</section>
+		<script src="main.js"></script>
+		<script src="./checkTriangle.js"> </script>
+		<style >
+			
+		</style>
+		</body> 
 </html>
