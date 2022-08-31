@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<link rel="stylesheet" href="./style.css">
+	
 	<body>
 		<section class="lesson_1">
 			<h1>Bài tập 1</h1>
@@ -51,7 +52,7 @@
 				<input id="bTriangle"  placeholder="cạnh b"></input>
 				<input id="cTriangle"  placeholder="cạnh c"></input>
 			</div>
-			<button onclick="onCalculateTriangleArea()"> Tính toán: </button>
+			<button id="calculate" disabled="disabled" onclick="onCalculateTriangleArea()"> Tính toán: </button>
 			<div class="result__section">
 				<h3> Diện tích tam giác là :</h3>
 				<input id="result_3" readonly>
@@ -110,6 +111,7 @@
 		</div>
 	</section>
 		<script src="main.js"></script>
+		<script src="./checkTriangle.js"> </script>
 		<style >
 			
 		</style>
